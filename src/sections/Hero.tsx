@@ -171,8 +171,7 @@ export default function Hero() {
         style={{
           position: 'absolute',
           bottom: '2.5rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
+          left: '3rem',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
