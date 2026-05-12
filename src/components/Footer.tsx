@@ -103,6 +103,45 @@ export default function Footer() {
           © {year} · Todos los derechos reservados
         </p>
       </div>
+
+      {/* Bottom bar */}
+      <div
+        style={{
+          borderTop: '1px solid #2A2A2A',
+          marginTop: '3rem',
+          paddingTop: '1.25rem',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '0.5rem',
+          maxWidth: '72rem',
+          margin: '3rem auto 0',
+          padding: '1.25rem 1.5rem 0',
+        }}
+      >
+        <p
+          style={{
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
+            fontSize: '0.58rem',
+            letterSpacing: '0.12em',
+            color: '#3A3A3A',
+          }}
+        >
+          Esta página es operada por Sensepot Smart Technologies&#174;
+        </p>
+        <p
+          style={{
+            fontFamily: 'var(--font-inter), system-ui, sans-serif',
+            fontSize: '0.58rem',
+            letterSpacing: '0.12em',
+            color: '#3A3A3A',
+            textAlign: 'right',
+          }}
+        >
+          Este sitio web fue creado por Webfficient Smart Services
+        </p>
+      </div>
     </footer>
   )
 }
