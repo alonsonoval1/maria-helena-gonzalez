@@ -125,7 +125,7 @@ export default function Footer() {
             fontFamily: 'var(--font-inter), system-ui, sans-serif',
             fontSize: '0.58rem',
             letterSpacing: '0.12em',
-            color: '#3A3A3A',
+            color: '#7A7A7A',
           }}
         >
           Esta página es operada por Sensepot Smart Technologies&#174;
@@ -135,7 +135,7 @@ export default function Footer() {
             fontFamily: 'var(--font-inter), system-ui, sans-serif',
             fontSize: '0.58rem',
             letterSpacing: '0.12em',
-            color: '#3A3A3A',
+            color: '#7A7A7A',
             textAlign: 'right',
           }}
         >
