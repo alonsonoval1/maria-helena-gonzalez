@@ -159,20 +159,6 @@ export default function Hero() {
               />
             </div>
 
-            {/* Caption */}
-            <p
-              style={{
-                marginTop: '1rem',
-                fontFamily: 'var(--font-inter), system-ui, sans-serif',
-                fontSize: '0.62rem',
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                color: '#A0895C',
-                textAlign: 'center',
-              }}
-            >
-              María Helena González López
-            </p>
           </div>
         </motion.div>
       </div>
