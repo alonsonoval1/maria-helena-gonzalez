@@ -14,17 +14,13 @@ export default function Hero() {
     <section
       id="inicio"
       style={{
-        minHeight: '100vh',
         background: '#F5F0E8',
-        display: 'flex',
-        alignItems: 'center',
-        paddingTop: '5rem',
-        paddingBottom: '5rem',
+        paddingTop: '6rem',
+        paddingBottom: '4rem',
         position: 'relative',
-        overflow: 'hidden',
       }}
     >
-      {/* Subtle background texture variation */}
+      {/* Background texture */}
       <div
         style={{
           position: 'absolute',
@@ -35,168 +31,110 @@ export default function Hero() {
         }}
       />
 
-      <div
-        className="max-w-7xl mx-auto px-6 lg:px-12 w-full"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(12, 1fr)',
-          gap: '2rem',
-          alignItems: 'center',
-        }}
-      >
-        {/* Left: Text content */}
-        <div
-          style={{
-            gridColumn: 'span 12',
-          }}
-          className="lg:col-span-7"
-        >
-          {/* Pre-title label */}
-          <motion.p
-            {...fadeUp(0.1)}
-            className="section-label mb-6"
-          >
-            Historiadora del Arte · Curadora · Gestora Cultural
-          </motion.p>
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        {/* Mobile: photo on top, then text. Desktop: side by side */}
+        <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
 
-          {/* Ornamental rule */}
+          {/* Photo — shown on all sizes */}
           <motion.div
-            {...fadeUp(0.2)}
-            style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, delay: 0.3, ease: 'easeOut' }}
+            className="w-full lg:w-5/12 flex justify-center lg:justify-end order-first lg:order-last"
           >
-            <div style={{ width: '3rem', height: '1px', background: '#C9B99A' }} />
-            <span style={{ color: '#C9B99A', fontSize: '0.45rem', letterSpacing: '0.3em' }}>◆</span>
+            <div style={{ width: '100%', maxWidth: '340px' }}>
+              <div
+                style={{
+                  aspectRatio: '3/4',
+                  position: 'relative',
+                  boxShadow:
+                    'inset 0 0 0 16px #F5F0E8, inset 0 0 0 18px #C9B99A, 0 20px 60px rgba(26,26,26,0.12)',
+                  overflow: 'hidden',
+                }}
+              >
+                <Image
+                  src="/maria-helena-hero.jpg"
+                  alt="María Helena González López"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  priority
+                />
+              </div>
+            </div>
           </motion.div>
 
-          {/* Name */}
-          <motion.h1
-            {...fadeUp(0.3)}
-            style={{
-              fontFamily: 'var(--font-cormorant), Georgia, serif',
-              fontSize: 'clamp(3rem, 6vw, 6.5rem)',
-              fontWeight: 300,
-              lineHeight: 1.0,
-              letterSpacing: '-0.02em',
-              color: '#1A1A1A',
-              marginBottom: '0.3em',
-            }}
-          >
-            María Helena
-            <br />
-            <span style={{ fontStyle: 'italic', fontWeight: 300 }}>González López</span>
-          </motion.h1>
+          {/* Text */}
+          <div className="w-full lg:w-7/12 order-last lg:order-first">
+            <motion.p {...fadeUp(0.1)} className="section-label mb-6">
+              Historiadora del Arte · Curadora · Gestora Cultural
+            </motion.p>
 
-          {/* Subtitle */}
-          <motion.p
-            {...fadeUp(0.45)}
-            style={{
-              fontFamily: 'var(--font-inter), system-ui, sans-serif',
-              fontSize: '0.72rem',
-              fontWeight: 400,
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              color: '#A0895C',
-              marginBottom: '3rem',
-            }}
-          >
-            Ciudad de México, 1965
-          </motion.p>
+            <motion.div
+              {...fadeUp(0.2)}
+              style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}
+            >
+              <div style={{ width: '3rem', height: '1px', background: '#C9B99A' }} />
+              <span style={{ color: '#C9B99A', fontSize: '0.45rem', letterSpacing: '0.3em' }}>◆</span>
+            </motion.div>
 
-          {/* Horizontal rule before quote */}
-          <motion.div
-            {...fadeUp(0.5)}
-            style={{ height: '1px', background: '#D8CDB8', marginBottom: '2.5rem', maxWidth: '28rem' }}
-          />
-
-          {/* Quote */}
-          <motion.blockquote
-            {...fadeUp(0.6)}
-            style={{
-              fontFamily: 'var(--font-cormorant), Georgia, serif',
-              fontSize: 'clamp(1.15rem, 2vw, 1.5rem)',
-              fontWeight: 300,
-              fontStyle: 'italic',
-              lineHeight: 1.65,
-              color: '#3A3A3A',
-              maxWidth: '36rem',
-              position: 'relative',
-              paddingLeft: '1.5rem',
-              borderLeft: '2px solid #C9B99A',
-            }}
-          >
-            "Los museos, estos lugares donde el tiempo se suspende y la percepción se enciende,
-            pueden ser también hogares de esperanza."
-          </motion.blockquote>
-        </div>
-
-        {/* Right: Portrait placeholder */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.1, delay: 0.4, ease: 'easeOut' }}
-          style={{
-            gridColumn: 'span 12',
-          }}
-          className="lg:col-span-5 hidden lg:flex justify-center"
-        >
-          <div style={{ width: '100%', maxWidth: '380px' }}>
-            {/* Gallery-style portrait frame */}
-            <div
+            <motion.h1
+              {...fadeUp(0.3)}
               style={{
-                aspectRatio: '3/4',
-                position: 'relative',
-                boxShadow:
-                  'inset 0 0 0 20px #F5F0E8, inset 0 0 0 22px #C9B99A, 0 20px 60px rgba(26, 26, 26, 0.12)',
-                overflow: 'hidden',
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
+                fontSize: 'clamp(2.8rem, 6vw, 6.5rem)',
+                fontWeight: 300,
+                lineHeight: 1.0,
+                letterSpacing: '-0.02em',
+                color: '#1A1A1A',
+                marginBottom: '0.3em',
               }}
             >
-              <Image
-                src="/maria-helena-hero.jpg"
-                alt="María Helena González López"
-                fill
-                style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                priority
-              />
-            </div>
+              María Helena
+              <br />
+              <span style={{ fontStyle: 'italic', fontWeight: 300 }}>González López</span>
+            </motion.h1>
 
+            <motion.p
+              {...fadeUp(0.45)}
+              style={{
+                fontFamily: 'var(--font-inter), system-ui, sans-serif',
+                fontSize: '0.72rem',
+                fontWeight: 400,
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: '#A0895C',
+                marginBottom: '2.5rem',
+              }}
+            >
+              Ciudad de México, 1965
+            </motion.p>
+
+            <motion.div
+              {...fadeUp(0.5)}
+              style={{ height: '1px', background: '#D8CDB8', marginBottom: '2rem', maxWidth: '28rem' }}
+            />
+
+            <motion.blockquote
+              {...fadeUp(0.6)}
+              style={{
+                fontFamily: 'var(--font-cormorant), Georgia, serif',
+                fontSize: 'clamp(1.05rem, 2vw, 1.45rem)',
+                fontWeight: 300,
+                fontStyle: 'italic',
+                lineHeight: 1.65,
+                color: '#3A3A3A',
+                maxWidth: '36rem',
+                paddingLeft: '1.5rem',
+                borderLeft: '2px solid #C9B99A',
+              }}
+            >
+              "Los museos, estos lugares donde el tiempo se suspende y la percepción se enciende,
+              pueden ser también hogares de esperanza."
+            </motion.blockquote>
           </div>
-        </motion.div>
-      </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 1.2 }}
-        style={{
-          position: 'absolute',
-          bottom: '2.5rem',
-          left: '3rem',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-        }}
-      >
-        <p
-          style={{
-            fontFamily: 'var(--font-inter), system-ui, sans-serif',
-            fontSize: '0.55rem',
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            color: '#C9B99A',
-          }}
-        >
-          Desplazar
-        </p>
-        <div
-          style={{
-            width: '1px',
-            height: '2.5rem',
-            background: 'linear-gradient(to bottom, #C9B99A, transparent)',
-          }}
-        />
-      </motion.div>
+        </div>
+      </div>
     </section>
   )
 }
